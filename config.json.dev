@@ -1,0 +1,17 @@
+{
+	"wifi":{
+		"ssid":"XXXX",
+		"password":"XXXX"
+	},
+	"mqtt":{
+		"broker": "m14.cloudmqtt.com",
+		"user": "XXX",
+		"password": "XXX",
+		"port": "19970",
+		"topics": {
+			"led1":"test/led1/set",
+			"led2":"test/led2/set"
+		},
+		"client_id": "esp8266_XXXXXX"
+	}   
+}
