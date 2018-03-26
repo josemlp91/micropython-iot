@@ -5,11 +5,10 @@ import machine
 import ubinascii
 
 
-
 class UmqttBroker(object):
-	"""docstring for UmqttBroker"""
+	"""UmqttBroker"""
 	
-	def __init__(self, topic):
+	def __init__(self):
 
 		config = CONFIG.load_config()
 
@@ -23,23 +22,23 @@ class UmqttBroker(object):
 		except:
 			print("Couldn't load mqtt config param (client_id, broker url, user, password, port) in config.json")
 
-		try:
-			self.topic = config["mqtt"]["topics"][topic]
-		except:
-			print("Don't exits the topic %s in config.json topic") % (topic)
-
-		
 		#Create an instance of MQTTClient 
 		self.client = MQTTClient(self.client_id, self.broker, user=self.user, password=self.password, port=self.port)
 
 
-	def listen(self):
-		# Attach call back handler to be called on receiving messages
-		self.client.set_callback(onMessage)
-		self.client.connect()
-		self.client.subscribe(self.topic)
+	@staticmethod
+	def onMessage(topic, msg):
+		# Generic callback.
+		print("Topic: %s, Message: %s" % (topic, msg))		
+	
 
-		print("ESP8266 is Connected to %s and subscribed to %s topic" % (self.broker,self.topic))
+	def listen(self, topic):
+		# Attach call back handler to be called on receiving messages
+		self.client.set_callback(self.onMessage)
+		self.client.connect()
+		self.client.subscribe(topic)
+
+		print("ESP8266 is Connected to %s and subscribed to %s topic" % (self.broker, topic))
 	 
 		try:
 			while True:
@@ -47,25 +46,17 @@ class UmqttBroker(object):
 		finally:
 			self.client.disconnect()
 
-	def emit(self, data):
+
+	def emit(self, data, topic):
 		self.client.connect()
-		self.client.publish('{}'.format(self.topic),bytes(str(data), 'utf-8'))
+		self.client.publish('{}'.format(topic),bytes(str(data), 'utf-8'))
 		print('Sensor state: {}'.format(data))
 
+	
 
-#################################################################################
-# CUSTOM CALLBACK
 
-bulbPin = Pin(22, Pin.OUT)
 
-def onMessage(topic, msg):
 
-	print("Topic: %s, Message: %s" % (topic, msg))
- 
-	if msg == b"1":
-		bulbPin.value(1)
-	elif msg == b"0":
-		bulbPin.value(0)
 
 		
 		

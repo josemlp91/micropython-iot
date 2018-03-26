@@ -1,5 +1,9 @@
 [
-	"micropython-umqtt.simple"
-
+	"micropython-umqtt.simple",
+	"picoweb",
+	"micropython-logging",
+	"utemplate",
+	"uasyncio",
+	"collections.deque"
 
 ]
