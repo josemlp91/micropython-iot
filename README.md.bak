@@ -2,9 +2,9 @@
 
 [TOC]
 
-##¿Que es Micropython ?
+##¿Que es micropyhon ?
 
-Micropython es un pequeño pero eficiente interprete de [Python 3](https://www.python.org/) que incluye un subconjunto mínimo de librerías y que se encuentra optimizado para que pueda correr en microcontroladores y ambientes restringidos.
+MicroPython es un pequeño pero eficiente interprete de [Python 3](https://www.python.org/) que incluye un subconjunto mínimo de librerías y que se encuentra optimizado para que pueda correr en microcontroladores y ambientes restringidos.
 
 ### Características
 
@@ -13,9 +13,9 @@ Micropython es un pequeño pero eficiente interprete de [Python 3](https://www.p
 
 
 
-### ¿Donde ejecutar Micropython?
+### ¿Donde ejecutar micropython?
 
-Micropython se puede instalar en la mayoría de los sistema operativos **UNIX**, pero lo interesante es instalarlo en alguna de los microcontroladores que lo soportan.
+Micropython se puede instalar en la mayria de los sistema operativos **UNIX**, pero lo interesante es instalarlo en alguna de los microcontroladoros que lo soportan.
 
 -  [Pyboard](https://www.adafruit.com/product/2390)
 -  [WiPy](https://www.adafruit.com/product/3184)
@@ -24,7 +24,7 @@ Micropython se puede instalar en la mayoría de los sistema operativos **UNIX**,
 
 
 
-Estos microcontroladores tienen una potencia limitada, pero con la ventaja de incorporar conexión wifi, un consumo energético bastante bajo y un precio muy bajo, (menos de 10$). Además son fácilmente flasheables con **micropython**.
+Estos microcontroladores tienen una potencia limitada, pero con la ventaja de incorporar conexión wifi, un consumo energético bastante bajo y un precio muy bajo, (menos de 10$). Además son facilmene flasheables con **micropython**.
 
 ## Requisitos
 
@@ -36,7 +36,7 @@ Debes tener instalado **Python** y el gestor de paquetes **pip** y consola serie
   pip install esptool
   ```
 
-2.  Instalar herramientas para interactuar con la placa.
+2.  Instalar herramientas para interectuar con la placa.
 
    ```bash
    pip install adafruit-ampy
@@ -137,9 +137,9 @@ Debes tener instalado **Python** y el gestor de paquetes **pip** y consola serie
 
 **MQTT** sigue una topología en estrella**, donde existe un **nodo central o **broker** tiene capacidad para trabajar con un gran número de clientes y gestionar la conectividad entre ellos. Y la comunicación puede ser de uno a uno o de uno a muchos.
 
-También proporciona la capa de seguridad, autenticación y cifrado necesaria.
+Tambien proporciona la capa de seguridad, autenticación y cifrado necesaria.
 
-Para el enrrutamiento de los mensajes se usa el concepto **topic** o tema,  el topic es una etiqueta para diferencias los diferentes mensajes mqtt que circulan la red y pueden tener una forma jerárquica.
+Para el enrrutamiento de los mensajes se usa el concepto **topic** o tema,  el topic es una etiqueta para diferencias los diferentes mensajes mqtt que cirulan la red y pueden tener una forma jerárquica.
 
 **Ejemplo:**
 
@@ -163,7 +163,7 @@ De esta forma un sensor, puede publicar un mensaje X cada N tiempo en un determi
 
 ## Integrar MQTT con Micropython
 
-Y puestos en este punto se nos ocurre la forma de implementar una aplicación domótica usando estas tecnologías, quizá parezca complicado, pero te aseguro que es más simple de lo que parece.
+Y puestos en este punto se nos ocurre la forma de implementar una aplicación domótica usando estas tecnologías, quizá parezca complicado, pero te aseuro que es más simple de lo que parece.
 
 El primer paso es tener un **broker MQTT** que gestione los mensajes, no es muy complejo hacer una instalación en un servidor propio, pero existen soluciones cloud mucho más simples de usar.
 
@@ -179,9 +179,9 @@ Una vez creado al consultar la configuración de la instancia veras algo parecid
 
 ###Conectar Micropython a MQTT
 
-Asumimos que se ha completado la instalación anterior.
+Asumimos que se ha completado la instación anterior.
 
-1. Descargar repositorio: [micropython-iot](https://github.com/josemlp91/micropython-iot)
+1. Descargar repositório: [micropython-iot](https://github.com/josemlp91/micropython-iot)
 
 2. Modificar configuración, ``cp config.json.dev config.json`` y modificar la configuración para conectarte a la ``red wifi``, y al ``broker mqtt`` antes configurado.
 
@@ -265,7 +265,7 @@ https://pagefault.blog/2017/03/02/using-local-mqtt-broker-for-cloud-and-interpro
 
 ## Disclainer
 
-Este proyecto se encuentra en fase de desarrollo como parte de un proyecto personal destinado al aprendizaje de las tecnologías involucradas, el autor no se responsabiliza de cualquier defecto del software. Úselo y modifíquelo bajo su propia responsabilidad. 
+Este proyecto se encuentra en fase de desarrollo como parte de un proyecto personal destinado al aprendizaje de las tecnologias involucradas, el autor no se responsabiliza de cualquier defecto del software. Uselo y modifiquelo bajo su propia responsabilidad. 
 
 
 ## Autor

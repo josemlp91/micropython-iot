@@ -24,16 +24,8 @@ class LedUmqttBroker(UmqttBroker):
 
 if __name__ == '__main__':
 
-
-	print("ready")	
-	#wifi.connect()
+	wifi.connect()
 
 	# Test subscribete Broker 
-	#broker = LedUmqttBroker()
-	#broker.listen("test/led")
-
-	# Test publish with broker
-	#broker = UmqttBroker()
-	#while True:
-	#	broker.emit(random.randint(0, 9), 'test/random')
-	#	time.sleep(5)
+	broker = LedUmqttBroker()
+	broker.listen("test/led")
