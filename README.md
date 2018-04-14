@@ -1,8 +1,8 @@
-#Micropython y MQTT.
+# Micropython y MQTT.
 
 [TOC]
 
-##¿Que es Micropython ?
+## ¿Que es Micropython ?
 
 Micropython es un pequeño pero eficiente interprete de [Python 3](https://www.python.org/) que incluye un subconjunto mínimo de librerías y que se encuentra optimizado para que pueda correr en microcontroladores y ambientes restringidos.
 
