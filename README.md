@@ -177,7 +177,7 @@ Una vez creado al consultar la configuración de la instancia veras algo parecid
 
 
 
-###Conectar Micropython a MQTT
+### Conectar Micropython a MQTT
 
 Asumimos que se ha completado la instalación anterior.
 
